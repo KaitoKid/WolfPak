@@ -8,5 +8,5 @@ class Wolf(models.Model):
     family = models.ForeignKey(
         "Family",
         on_delete=models.CASCADE,
-        related_name="wolf",
+        related_name="wolves",
         null=False)

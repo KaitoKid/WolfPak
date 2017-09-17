@@ -7,15 +7,6 @@ from api.models import Quest
 from api.serializers import QuestSerializer
 
 class QuestDetail(APIView):
-    def get(self, request, quest_id):
-        try:
-            quest = Quest.objects.get(pk=quest_id)
-        except ObjectDoesNotExist:
-            raise Http404
-
-        serializer = QuestSerializer(instance=quest)
-        return Response(serializer.data)
-
     def post(self, request, quest_id):
         try:
             quest = Quest.objects.get(pk=quest_id)

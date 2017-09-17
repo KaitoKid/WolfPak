@@ -2,20 +2,24 @@ from rest_framework import serializers
 
 from .models import *
 
+class NeedSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Need
+        fields = ["need"]
 
 class QuestSerializer(serializers.ModelSerializer):
+    needs = NeedSerializer(many=True)
 
     class Meta:
         model = Quest
-        fields = ["pk", "created_on", "completed_on", "x_coord", "y_coord",
-         "message", "owner"]
+        fields = ["pk", "name", "status", "created_on", "x_coord", "y_coord",
+         "message", "needs"]
 
 class WolfSerializer(serializers.ModelSerializer):
-    quests = QuestSerializer(many=True)
 
     class Meta:
         model = Wolf
-        fields = ["pk", "first_name", "last_name", "quests"]
+        fields = ["pk", "first_name", "last_name"]
 
 
 class FamilySerializer(serializers.ModelSerializer):
