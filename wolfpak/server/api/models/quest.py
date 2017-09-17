@@ -13,8 +13,8 @@ class Quest(models.Model):
     created_on = models.DateTimeField(null=True)
 
     # request detail
-    x_coord = models.FloatField(default=0.0)
-    y_coord = models.FloatField(default=0.0)
+    longitude = models.FloatField(default=0.0)
+    latitude = models.FloatField(default=0.0)
 
     # actual emojis
     message = models.CharField(null = False, max_length=256)

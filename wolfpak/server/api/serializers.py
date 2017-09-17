@@ -12,7 +12,7 @@ class QuestSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Quest
-        fields = ["pk", "name", "status", "created_on", "x_coord", "y_coord",
+        fields = ["pk", "name", "status", "created_on", "longitude", "latitude",
          "message", "needs"]
 
 class WolfSerializer(serializers.ModelSerializer):
@@ -28,7 +28,6 @@ class FamilySerializer(serializers.ModelSerializer):
     class Meta:
         model = Family
         fields = ["pk", "name", "family_type", "wolves"]
-
 
 class PakSerializer(serializers.ModelSerializer):
     families = FamilySerializer(many=True)

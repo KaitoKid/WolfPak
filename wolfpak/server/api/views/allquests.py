@@ -8,6 +8,7 @@ from api.serializers import QuestSerializer
 
 class AllQuestsDetail(APIView):
     def get(self, request):
+        print(request.POST.get("title", ""))
         quest = Quest.objects.all()
         serializer = QuestSerializer(instance=quest, many=True)
         return Response(serializer.data)
