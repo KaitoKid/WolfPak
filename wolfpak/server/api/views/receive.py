@@ -27,10 +27,8 @@ class ReceiveDetail(APIView):
         q = Quest(id=4, name="Dwight", status=0, created_on="2019-09-16 00:19:54", latitude=37.7581836, longitude=-122.3899936,
                   message="Has a big beard and wearing blue jeans")
         q.save()
-        n = Need(need=3, owner=q)
+        n = Need(need=0, owner=q)
         n.save()
-        n3 = Need(need=6, owner=q)
-        n3.save()
 
         serializer = QuestSerializer(instance=q)
         return Response(serializer.data)
