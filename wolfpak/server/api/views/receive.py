@@ -29,8 +29,6 @@ class ReceiveDetail(APIView):
         q.save()
         n = Need(need=3, owner=q)
         n.save()
-        n2 = Need(need=5, owner=q)
-        n2.save()
         n3 = Need(need=6, owner=q)
         n3.save()
 
