@@ -7,7 +7,7 @@ from api.models import Quest
 from api.serializers import QuestSerializer
 
 class DDwightDetail(APIView):
-    def post(self, request):
+    def get(self, request):
         q = Quest.objects.get(id=4)
         q.delete()
         return HttpResponse("Deleted Dwight")
