@@ -17,7 +17,12 @@ class ReceiveDetail(APIView):
         '''
 
         # EDIT THE 'TO' FOR WHOEVER IS SENDING A TEXT
-
+        os.system("curl -X POST  https://rest.nexmo.com/sms/json \
+        -d api_key=2356ce2f \
+        -d api_secret=0938509e385aca57 \
+        -d to=15105291564 \
+        -d from=12016728806 \
+        -d text='Hey Dwight, we received your request. We'll be assigning someone to you shortly.'")
 
         q = Quest(id=4, name="Dwight", status=0, created_on="2019-09-16 00:19:54", latitude=37.7581836, longitude=-122.3899936,
                   message="Has a big beard and wearing blue jeans")
